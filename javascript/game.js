@@ -35,7 +35,7 @@ function shuffle(array) {
     return array;
 };
 
-// generate random number between 19 - 120 for number to match
+// Run game; generate random number between 19 - 120 for number to match
 function game() {
     mainNum = randomIntFromInterval(19, 120);
     $('#main-number').html(`${mainNum}`);
@@ -53,7 +53,7 @@ function game() {
             console.log('WIN!');
             wins++;
             count = 0;
-            $('#all-crystals').text('');
+            $('#all-crystals').html('');
             $('#wins').html(`Wins: ${wins}`);
             game();
         }
@@ -61,28 +61,29 @@ function game() {
             console.log('LOSE!');
             loses++;
             count = 0;
-            $('#all-crystals').text('');
+            $('#all-crystals').html('');
             $('#loses').html(`Loses: ${loses}`);
             game();
         }
         console.log(`wins: ${wins} | loses: ${loses}`);
     };
 
+    // get value from attribute and add the value to count
     $(document).ready(function() {
         $('.crystals').on('click', function() {
-            var crystalText = $(this).text(); // val() wont work; returns 0 or blank
+            var crystalText = $(this).attr('value');
             var crystalVal = parseInt(crystalText);
             console.log(`\nClicked: ${crystalVal}`);
 
             // add value of crystal to count
             count += crystalVal;
             console.log(`Total count: ${count}`);
+
+            // check score
             score();
         }); // end document.ready
     }); // end crystals.click
 }; // end game
-game();
 
-// for (var index in nameArr) {
-//             console.log(nameArr[index]);
-//         }
+// game execution
+game();

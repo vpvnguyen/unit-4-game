@@ -7,8 +7,8 @@ var mainNum;
 
 // array of numbers to choose from; 1 - 12
 var randomNumArr = [1, 5, 8, 12];
-// store crystal counts
 
+// store crystal counts
 var count = 0;
 
 // random number between min and max numbers
@@ -16,7 +16,7 @@ function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-// shuffles an array
+// pass in to shuffle array
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -47,7 +47,7 @@ function game() {
         $('#all-crystals').append(`<span class="crystals" id="crystals-${randomNumArr[i]}" value="${randomNumArr[i]}"> ${randomNumArr[i]}`);
     };
 
-    // when user presses a crystal, add the number to count
+    // check if user wins or loses
     function score() {
         if (count === mainNum) {
             console.log('WIN!');

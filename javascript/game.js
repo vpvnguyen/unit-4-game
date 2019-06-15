@@ -35,7 +35,13 @@ function shuffle(array) {
     return array;
 };
 
-// Run game; generate random number between 19 - 120 for number to match
+// affect DOM
+function showHTML() {
+    $('#wins').html(`Wins: ${wins}`);
+    $('#loses').html(`Loses: ${loses}`);
+};
+
+// run game; generate random number between 19 - 120 for number to match
 function game() {
     mainNum = randomIntFromInterval(19, 120);
     $('#main-number').html(`${mainNum}`);
@@ -45,7 +51,7 @@ function game() {
     // random randomNumArr and assign each number to a crystal
     for (var i = 0; i < randomNumArr.length; i++) {
         $('#all-crystals').append(`<span class="crystals" id="crystals-${randomNumArr[i]}" value="${randomNumArr[i]}"> ${randomNumArr[i]}`);
-    };
+    }
 
     // check if user wins or loses
     function score() {
@@ -53,8 +59,8 @@ function game() {
             console.log('WIN!');
             wins++;
             count = 0;
+            showHTML();
             $('#all-crystals').html('');
-            $('#wins').html(`Wins: ${wins}`);
             game();
         }
         if (count > mainNum) {
@@ -62,10 +68,23 @@ function game() {
             loses++;
             count = 0;
             $('#all-crystals').html('');
-            $('#loses').html(`Loses: ${loses}`);
+            showHTML();
             game();
         }
         console.log(`wins: ${wins} | loses: ${loses}`);
+    };
+
+    // pass in count to affect game text
+    function gameText(a) {
+        if (a > mainNum) {
+            $('#text').html('You lose. Crystals are randomized! Click on a crystal to try again!');
+        } else if (a === mainNum) {
+            $('#text').html('You Won! Crystals are randomized! Click on a crystal to try again!');
+        } else if (a >= mainNum/2) {
+            $('#text').html('Getting close! Half way there!');
+        } else if (a > 0) {
+            $('#text').html('Good luck!');
+        }
     };
 
     // get value from attribute and add the value to count
@@ -75,8 +94,12 @@ function game() {
             var crystalVal = parseInt(crystalText);
             console.log(`\nClicked: ${crystalVal}`);
 
-            // add value of crystal to count
+            // diplay score
+            showHTML();
+
+            // add value of crystal to count; change game's text depending on current count
             count += crystalVal;
+            gameText(count);
             console.log(`Total count: ${count}`);
 
             // check score

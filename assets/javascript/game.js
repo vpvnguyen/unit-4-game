@@ -9,7 +9,7 @@ var mainNum;
 var randomNumArr = [1, 5, 8, 12];
 
 // array of images to be appended to DOM as crystals
-var images = ['./images/gem1.png', './images/gem2.png', './images/gem3.png', './images/gem4.png'];
+var images = ['./assets/images/gem1.png', './assets/images/gem2.png', './assets/images/gem3.png', './assets/images/gem4.png'];
 
 // store crystal counts
 var count = 0;

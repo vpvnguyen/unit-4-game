@@ -7,7 +7,7 @@ var mainNum;
 
 // array of numbers to choose from; 1 - 12
 var randomNumArr = [1, 5, 8, 12];
-
+var images = ['./images/gem1.png', './images/gem2.png', './images/gem3.png', './images/gem4.png'];
 // store crystal counts
 var count = 0;
 
@@ -51,7 +51,7 @@ function game() {
     shuffle(randomNumArr);
     // random randomNumArr and assign each number to a crystal
     for (var i = 0; i < randomNumArr.length; i++) {
-        $('#all-crystals').append(`<span class="crystals" id="crystals-${randomNumArr[i]}" value="${randomNumArr[i]}"> ${randomNumArr[i]}`);
+        $('#all-crystals').append(`<span class="crystals" id="crystals-${randomNumArr[i]}" value="${randomNumArr[i]}"><img src="${images[i]}" alt="gem" width="40" height="40">`);
     }
 
     // check if user wins or loses

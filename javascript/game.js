@@ -35,9 +35,9 @@ function shuffle(array) {
     return array;
 };
 
-// affect DOM
+// affect DOM with updated variables
 function updateHtml() {
-    $('#crystal-value').html(`Crystal Value: ${count}`)
+    $('#crystal-value').html(`Crystal Value: ${count}`);
     $('#wins').html(`Wins: ${wins}`);
     $('#loses').html(`Loses: ${loses}`);
 };
@@ -51,7 +51,7 @@ function game() {
     shuffle(randomNumArr);
     // random randomNumArr and assign each number to a crystal
     for (var i = 0; i < randomNumArr.length; i++) {
-        $('#all-crystals').append(`<span class="crystals" id="crystals-${randomNumArr[i]}" value="${randomNumArr[i]}"><img src="${images[i]}" alt="gem" width="40" height="40">`);
+        $('#all-crystals').append(`<span class="crystals p-2" id="crystals-${randomNumArr[i]}" value="${randomNumArr[i]}"><img src="${images[i]}" alt="gem" width="60" height="60">`);
     }
 
     // check if user wins or loses
@@ -95,20 +95,21 @@ function game() {
             var crystalVal = parseInt(crystalText);
             console.log(`\nClicked: ${crystalVal}`);
 
-            // add value of crystal to count; change game's text depending on current count
+            // add value of crystal to count
             count += crystalVal;
 
             // update score
             updateHtml();
 
+            // update game text depending on count
             gameText(count);
             console.log(`Total count: ${count}`);
 
             // check score
             score();
-        }); // end document.ready
-    }); // end crystals.click
-}; // end game
+        });
+    });
+};
 
 // game execution
 game();

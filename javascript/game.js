@@ -37,7 +37,7 @@ function shuffle(array) {
 
 // affect DOM with updated variables
 function updateHtml() {
-    $('#crystal-value').html(`Crystal Value: ${count}`);
+    $('#crystal-value').html(`Count: ${count}`);
     $('#wins').html(`Wins: ${wins}`);
     $('#loses').html(`Loses: ${loses}`);
 };
@@ -45,13 +45,13 @@ function updateHtml() {
 // run game; generate random number between 19 - 120 for number to match
 function game() {
     mainNum = randomIntFromInterval(19, 120);
-    $('#main-number').html(`${mainNum}`);
+    $('#main-number').html(`Number to match: ${mainNum}`);
 
     // shuffle array
     shuffle(randomNumArr);
     // random randomNumArr and assign each number to a crystal
     for (var i = 0; i < randomNumArr.length; i++) {
-        $('#all-crystals').append(`<span class="crystals p-2" id="crystals-${randomNumArr[i]}" value="${randomNumArr[i]}"><img src="${images[i]}" alt="gem" width="60" height="60">`);
+        $('#all-crystals').append(`<span class="crystals p-3" id="crystals-${randomNumArr[i]}" value="${randomNumArr[i]}"><img src="${images[i]}" alt="gem" width="60" height="60">`);
     }
 
     // check if user wins or loses

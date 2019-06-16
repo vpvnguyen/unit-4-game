@@ -48,7 +48,7 @@ function updateHtml() {
 // run game; generate random number between 19 - 120 for number to match
 function game() {
     mainNum = randomIntFromInterval(19, 120);
-    $('#main-number').html(`Number to match: ${mainNum}`);
+    $('#main-number').html(`Count to match: ${mainNum}`);
 
     // shuffle array
     shuffle(randomNumArr);
@@ -87,7 +87,7 @@ function game() {
         } else if (total >= mainNum/2) {
             $('#text').html('Getting close! Half way there!');
         } else if (total > 0) {
-            $('#text').html('Good luck!');
+            $('#text').html('Game started! Good luck!');
         }
     };
 

@@ -7,7 +7,10 @@ var mainNum;
 
 // array of numbers to choose from; 1 - 12
 var randomNumArr = [1, 5, 8, 12];
+
+// array of images to be appended to DOM as crystals
 var images = ['./images/gem1.png', './images/gem2.png', './images/gem3.png', './images/gem4.png'];
+
 // store crystal counts
 var count = 0;
 
@@ -76,14 +79,14 @@ function game() {
     };
 
     // pass in count to change the game text progress
-    function gameText(a) {
-        if (a > mainNum) {
+    function gameText(total) {
+        if (total > mainNum) {
             $('#text').html('You lose. Crystals are randomized! Click on a crystal to try again!');
-        } else if (a === mainNum) {
+        } else if (total === mainNum) {
             $('#text').html('You Won! Crystals are randomized! Click on a crystal to try again!');
-        } else if (a >= mainNum/2) {
+        } else if (total >= mainNum/2) {
             $('#text').html('Getting close! Half way there!');
-        } else if (a > 0) {
+        } else if (total > 0) {
             $('#text').html('Good luck!');
         }
     };

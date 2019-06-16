@@ -9,24 +9,29 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- game font -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- link jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-
-<body>
+<!-- responsive background -->
+<body class="bg">
     <div class="container text-center">
         <div class="row">
             <!-- main content -->
             <div id="content" class="col content center-block">
-                <!-- crystals -->
+                <!-- crystal values -->
                 <div id="main-number" class="pb-2"></div>
+                <div id="crystal-value" class="pb-4"></div>
+                <!-- display crystals -->
                 <div id="all-crystals" class="pb-4"></div>
-                <div id="text" class="pb-4">Click on any crystal to start guessing!</div>
-                <div id="crystal-value"></div>
                 <!-- score -->
                 <div id="wins"></div>
                 <div id="loses"></div>
+                <!-- game text -->
+                <div id="text" class="pt-4">Click on any crystal to start guessing!</div>
             </div>
         </div>
     </div>

@@ -1,3 +1,27 @@
-.content {
-  margin-top: 100px;
+/* responsive background */
+body, html {
+  height: 100%;
 }
+.bg { 
+  background-image: url('../images/flat-night-background.png');
+  height: 100%; 
+  /* center and scale image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* position and style game content */
+.content {
+  position: relative;
+  margin-top: 200px;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 40px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+

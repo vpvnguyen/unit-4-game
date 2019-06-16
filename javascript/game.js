@@ -36,7 +36,8 @@ function shuffle(array) {
 };
 
 // affect DOM
-function showHTML() {
+function updateHtml() {
+    $('#crystal-value').html(`Crystal Value: ${count}`)
     $('#wins').html(`Wins: ${wins}`);
     $('#loses').html(`Loses: ${loses}`);
 };
@@ -59,7 +60,7 @@ function game() {
             console.log('WIN!');
             wins++;
             count = 0;
-            showHTML();
+            updateHtml();
             $('#all-crystals').html('');
             game();
         }
@@ -68,13 +69,13 @@ function game() {
             loses++;
             count = 0;
             $('#all-crystals').html('');
-            showHTML();
+            updateHtml();
             game();
         }
         console.log(`wins: ${wins} | loses: ${loses}`);
     };
 
-    // pass in count to affect game text
+    // pass in count to change the game text progress
     function gameText(a) {
         if (a > mainNum) {
             $('#text').html('You lose. Crystals are randomized! Click on a crystal to try again!');
@@ -94,11 +95,12 @@ function game() {
             var crystalVal = parseInt(crystalText);
             console.log(`\nClicked: ${crystalVal}`);
 
-            // diplay score
-            showHTML();
-
             // add value of crystal to count; change game's text depending on current count
             count += crystalVal;
+
+            // update score
+            updateHtml();
+
             gameText(count);
             console.log(`Total count: ${count}`);
 
@@ -110,3 +112,4 @@ function game() {
 
 // game execution
 game();
+updateHtml();

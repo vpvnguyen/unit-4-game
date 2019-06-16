@@ -54,7 +54,7 @@ function game() {
     shuffle(randomNumArr);
     // random randomNumArr and assign each number to a crystal
     for (var i = 0; i < randomNumArr.length; i++) {
-        $('#all-crystals').append(`<span class="crystals p-3" id="crystals-${randomNumArr[i]}" value="${randomNumArr[i]}"><img src="${images[i]}" alt="gem" width="60" height="60">`);
+        $('#all-crystals').append(`<span class="crystals p-2" id="crystals-${randomNumArr[i]}" value="${randomNumArr[i]}"><img src="${images[i]}" alt="gem" width="60" height="60">`);
     }
 
     // check if user wins or loses
